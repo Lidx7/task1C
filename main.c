@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include "NumClass.h"
 
+
 int main(void)
 {
     int x, y;
