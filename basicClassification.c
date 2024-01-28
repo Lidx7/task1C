@@ -5,16 +5,18 @@ int isStrong(int n){
     int temp = n;
     while(temp != 0){
         int current = temp%10;
-        for(int i = 1; i<=current; i++){
-           current *= i;
+        int ans = 1;
+        for(int i = 2; i<=current; i++){
+           ans *= i;
         }
-        sum += current;
+        sum += ans;
         temp /= 10;
     }
     
     if(sum == n){
         return 1;
     }
+
     return 0;
 }
 

@@ -36,16 +36,16 @@ int isPalindrome(int n) {
 
 
 
-
+//////////////////////////////////////////
 int isArmstrongHelper(int n, int digits) {
     if (n == 0) {
         return 0;
     }
 
     int remainder = n % 10;
-    int ans = 0;
+    int ans = remainder;
 
-    for(int i = digits; i>0; i--){
+    for(int i = 1; i<digits; i++){
         ans *= remainder;
     }
 
