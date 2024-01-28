@@ -1,4 +1,5 @@
 #include <stdio.h>
+
 int isStrong(int n){
     int sum = 0;
     int temp = n;
@@ -19,13 +20,19 @@ int isStrong(int n){
 
 int isPrime(int n){
     int ans = 1;
+    if(n == 0){
+        ans = 0;
+    }
+    else if(n == 1){
+        ans = 1;
+    }
+
     for(int i = 2; i<=n/2; i++){
         if(n%i == 0){
             ans = 0;
             break;
         }
     }
-    if(n == 1)
-        ans = 0;
+    
     return ans;
 }
