@@ -1,24 +1,12 @@
 #include <stdio.h>
 
-int isPalindromeRec(int num, int divisor) {
-    if (num < 10) {
-        return 1; 
+int isPalindromeRec(int n, int divisor) {
+    if (n == 0)
+    {
+        return divisor;
     }
 
-    int left = num;
-    while (left >= 10) {
-        left /= 10;
-    }
-
-    int right = num%10;
-
-    if (left != right) {
-        return 0; 
-    }
-
-    num = (num%divisor) / 10;
-
-    return isPalindromeRec(num, divisor/100);
+    return isPalindromeRec(n/10, ((n%10) + (divisor*10)));
 }
 
 int isPalindrome(int n) {
@@ -26,12 +14,12 @@ int isPalindrome(int n) {
         return 0;
     }
     
-    int divisor = 1;
-    while (n/divisor >= 10) {
-        divisor *= 10;
+    int palindrome = isPalindromeRec(n, 0);
+    if(palindrome == n)
+    {
+        return 1;
     }
-    
-    return isPalindromeRec(n, divisor);
+    return 0;
 }
 
 
