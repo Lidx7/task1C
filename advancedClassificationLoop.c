@@ -33,7 +33,7 @@ int isArmstrong(int n){
     for (originalNum = n; originalNum != 0; originalNum /= 10) {
         remainder = originalNum % 10;
 
-        int digitsTemp = digits;
+        //int digitsTemp = digits;
         while(digits){
             remainder *= remainder;
             digits--;
